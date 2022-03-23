@@ -90,7 +90,10 @@ BOOL VmxEnterRootMode(PVMM_PROCESSOR_CONTEXT Context)
     // Ensure the required fixed bits are set in cr0 and cr4, as per the spec.
     VmxSetFixedBits();
 
-    HvUtilLogDebug("VmxOnRegion[#%i]: (V) 0x%llx / (P) 0x%llx [%i]\n", OsGetCurrentProcessorNumber(), Context->VmxonRegion, Context->VmxonRegionPhysical, (PUINT32)Context->VmxonRegion->VmcsRevisionNumber);
+    HvUtilLogDebug("VmxOnRegion[#%i]: (V) 0x%llx / (P) 0x%llx [%i]\n", OsGetCurrentProcessorNumber(), 
+        Context->VmxonRegion, 
+        Context->VmxonRegionPhysical, 
+        (PUINT32)Context->VmxonRegion->VmcsRevisionNumber);
 
     // Execute VMXON to bring processor to VMX mode
     // Check RFLAGS.CF == 0 to ensure successful execution

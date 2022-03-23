@@ -2,10 +2,7 @@
 #include "vmx.h"
 
 NTSTATUS DriverEntry(PDRIVER_OBJECT DriverObject, PUNICODE_STRING RegistryPath);
-VOID
-DriverUnload(
-	_In_ PDRIVER_OBJECT DriverObject
-);
+VOID DriverUnload(_In_ PDRIVER_OBJECT DriverObject);
 
 PVMM_CONTEXT GlobalContext;
 

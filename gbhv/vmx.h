@@ -115,14 +115,14 @@ typedef struct _VMX_SEGMENT_DESCRIPTOR
 	/*
 	 * Access rights (32 bits). The format of this field is given in Table 24-2 and detailed as follows:
 	 * 
-	 * • The low 16 bits correspond to bits 23:8 of the upper 32 bits of a 64-bit segment descriptor. While bits
+	 * ?The low 16 bits correspond to bits 23:8 of the upper 32 bits of a 64-bit segment descriptor. While bits
 	 *   19:16 of code-segment and data-segment descriptors correspond to the upper 4 bits of the segment
 	 *   limit, the corresponding bits (bits 11:8) are reserved in this VMCS field.
 	 * 
-	 * • Bit 16 indicates an unusable segment. Attempts to use such a segment fault except in 64-bit mode.
+	 * ?Bit 16 indicates an unusable segment. Attempts to use such a segment fault except in 64-bit mode.
 	 *   In general, a segment register is unusable if it has been loaded with a null selector.
 	 * 
-	 * • Bits 31:17 are reserved.
+	 * ?Bits 31:17 are reserved.
 	 */
 	VMX_SEGMENT_ACCESS_RIGHTS AccessRights;
 } VMX_SEGMENT_DESCRIPTOR, *PVMX_SEGMENT_DESCRIPTOR;
